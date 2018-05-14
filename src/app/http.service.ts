@@ -10,7 +10,6 @@ export class HttpService {
 
 
   constructor(private _http: HttpClient) {
-    this.getPokemon();
   }
 
   getPokemon() {
@@ -28,6 +27,10 @@ export class HttpService {
         };
       })
     );
+  }
+  getName() {
+    const pokemon = this._http.get('https://pokeapi.co/api/v2/pokemon/1/');
+    return pokemon
   }
 
 }
